@@ -18,7 +18,7 @@ class ModulesCoordinator {
 }
 
 extension ModulesCoordinator: DialogsPresenterOutput {
-    func selected(dialog: Dialog) {
+    func selected(dialog: [Chat]) {
         
     }
 }

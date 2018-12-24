@@ -22,7 +22,15 @@
 		21421EDD21CE7445004D33EB /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21421EDC21CE7445004D33EB /* Dialog.swift */; };
 		21421EDF21CE7483004D33EB /* DialogsPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21421EDE21CE7483004D33EB /* DialogsPresenterProtocols.swift */; };
 		21421EE221CE753A004D33EB /* DialogsViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21421EE121CE753A004D33EB /* DialogsViewProtocols.swift */; };
-		21D785FC21CE912200D1099F /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D785FB21CE912200D1099F /* WeatherResponse.swift */; };
+		34B389D421D0FD4700AEE80B /* Buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B389CF21D0FD4700AEE80B /* Buffer.swift */; };
+		34B389D521D0FD4700AEE80B /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B389D021D0FD4700AEE80B /* Chat.swift */; };
+		34B389D621D0FD4700AEE80B /* UserMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B389D121D0FD4700AEE80B /* UserMessage.swift */; };
+		34B389D721D0FD4700AEE80B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B389D221D0FD4700AEE80B /* User.swift */; };
+		34B389D821D0FD4700AEE80B /* ChatFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B389D321D0FD4700AEE80B /* ChatFactory.swift */; };
+		34B389DF21D1023B00AEE80B /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B389DB21D1023B00AEE80B /* ChatTableViewCell.swift */; };
+		34B389E021D1023B00AEE80B /* ChatTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B389DC21D1023B00AEE80B /* ChatTableViewCellViewModel.swift */; };
+		34B389E121D1023B00AEE80B /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34B389DD21D1023B00AEE80B /* ChatTableViewCell.xib */; };
+		8652DE99294BCB664AEDBC16 /* Pods_MessengerViper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8550DE98770A0B408B92B8B /* Pods_MessengerViper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +51,17 @@
 		21421EDC21CE7445004D33EB /* Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
 		21421EDE21CE7483004D33EB /* DialogsPresenterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogsPresenterProtocols.swift; sourceTree = "<group>"; };
 		21421EE121CE753A004D33EB /* DialogsViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogsViewProtocols.swift; sourceTree = "<group>"; };
-		21D785FB21CE912200D1099F /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
+		34B389CF21D0FD4700AEE80B /* Buffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buffer.swift; sourceTree = "<group>"; };
+		34B389D021D0FD4700AEE80B /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		34B389D121D0FD4700AEE80B /* UserMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMessage.swift; sourceTree = "<group>"; };
+		34B389D221D0FD4700AEE80B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		34B389D321D0FD4700AEE80B /* ChatFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatFactory.swift; sourceTree = "<group>"; };
+		34B389DB21D1023B00AEE80B /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		34B389DC21D1023B00AEE80B /* ChatTableViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		34B389DD21D1023B00AEE80B /* ChatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
+		5EB8929597CE73AB3FF01A5E /* Pods-MessengerViper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessengerViper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MessengerViper/Pods-MessengerViper.debug.xcconfig"; sourceTree = "<group>"; };
+		8D2F92E7FE0291C5304ADDBF /* Pods-MessengerViper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessengerViper.release.xcconfig"; path = "Pods/Target Support Files/Pods-MessengerViper/Pods-MessengerViper.release.xcconfig"; sourceTree = "<group>"; };
+		D8550DE98770A0B408B92B8B /* Pods_MessengerViper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessengerViper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +69,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8652DE99294BCB664AEDBC16 /* Pods_MessengerViper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03BBAAEBA9CDBD0598535245 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5EB8929597CE73AB3FF01A5E /* Pods-MessengerViper.debug.xcconfig */,
+				8D2F92E7FE0291C5304ADDBF /* Pods-MessengerViper.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		21421E9C21CE6ABF004D33EB = {
 			isa = PBXGroup;
 			children = (
 				21421EA721CE6ABF004D33EB /* MessengerViper */,
 				21421EA621CE6ABF004D33EB /* Products */,
+				03BBAAEBA9CDBD0598535245 /* Pods */,
+				CBB4519A1840C6A77C42B1CC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +173,7 @@
 		21421EC621CE6F8D004D33EB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				34B389D921D1023B00AEE80B /* ChatCell */,
 				21421EE021CE7528004D33EB /* Protocols */,
 				21421ED521CE70CE004D33EB /* View Controller */,
 			);
@@ -170,8 +201,8 @@
 		21421EC921CE6FA9004D33EB /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				34B389CE21D0FD4700AEE80B /* Data Model */,
 				21421EDC21CE7445004D33EB /* Dialog.swift */,
-				21D785FB21CE912200D1099F /* WeatherResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -209,6 +240,36 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		34B389CE21D0FD4700AEE80B /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				34B389CF21D0FD4700AEE80B /* Buffer.swift */,
+				34B389D021D0FD4700AEE80B /* Chat.swift */,
+				34B389D121D0FD4700AEE80B /* UserMessage.swift */,
+				34B389D221D0FD4700AEE80B /* User.swift */,
+				34B389D321D0FD4700AEE80B /* ChatFactory.swift */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		34B389D921D1023B00AEE80B /* ChatCell */ = {
+			isa = PBXGroup;
+			children = (
+				34B389DB21D1023B00AEE80B /* ChatTableViewCell.swift */,
+				34B389DC21D1023B00AEE80B /* ChatTableViewCellViewModel.swift */,
+				34B389DD21D1023B00AEE80B /* ChatTableViewCell.xib */,
+			);
+			path = ChatCell;
+			sourceTree = "<group>";
+		};
+		CBB4519A1840C6A77C42B1CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8550DE98770A0B408B92B8B /* Pods_MessengerViper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -216,9 +277,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21421EB721CE6AC0004D33EB /* Build configuration list for PBXNativeTarget "MessengerViper" */;
 			buildPhases = (
+				5D142F139277EB470E467094 /* [CP] Check Pods Manifest.lock */,
 				21421EA121CE6ABF004D33EB /* Sources */,
 				21421EA221CE6ABF004D33EB /* Frameworks */,
 				21421EA321CE6ABF004D33EB /* Resources */,
+				67E0C9C01C1D5BFF623F66E7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -268,12 +331,66 @@
 			buildActionMask = 2147483647;
 			files = (
 				21421EB321CE6AC0004D33EB /* LaunchScreen.storyboard in Resources */,
+				34B389E121D1023B00AEE80B /* ChatTableViewCell.xib in Resources */,
 				21421ED721CE70E0004D33EB /* DialogsStoryboard.storyboard in Resources */,
 				21421EB021CE6AC0004D33EB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5D142F139277EB470E467094 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MessengerViper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67E0C9C01C1D5BFF623F66E7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MessengerViper/Pods-MessengerViper-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Fakery/Fakery.framework",
+				"${BUILT_PRODUCTS_DIR}/InitialsImageView/InitialsImageView.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageInputBar/MessageInputBar.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fakery.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InitialsImageView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageInputBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MessengerViper/Pods-MessengerViper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		21421EA121CE6ABF004D33EB /* Sources */ = {
@@ -284,11 +401,17 @@
 				21421EDD21CE7445004D33EB /* Dialog.swift in Sources */,
 				21421EC121CE6CA8004D33EB /* Application.swift in Sources */,
 				21421ECF21CE7098004D33EB /* DialogsRouter.swift in Sources */,
+				34B389D721D0FD4700AEE80B /* User.swift in Sources */,
+				34B389DF21D1023B00AEE80B /* ChatTableViewCell.swift in Sources */,
 				21421EE221CE753A004D33EB /* DialogsViewProtocols.swift in Sources */,
-				21D785FC21CE912200D1099F /* WeatherResponse.swift in Sources */,
+				34B389D821D0FD4700AEE80B /* ChatFactory.swift in Sources */,
+				34B389E021D1023B00AEE80B /* ChatTableViewCellViewModel.swift in Sources */,
 				21421EA921CE6ABF004D33EB /* AppDelegate.swift in Sources */,
+				34B389D621D0FD4700AEE80B /* UserMessage.swift in Sources */,
 				21421ED421CE70B5004D33EB /* DialogsInteractor.swift in Sources */,
 				21421EDB21CE735E004D33EB /* DialogsListInteractorProtocols.swift in Sources */,
+				34B389D421D0FD4700AEE80B /* Buffer.swift in Sources */,
+				34B389D521D0FD4700AEE80B /* Chat.swift in Sources */,
 				21421EC521CE6E6D004D33EB /* ModulesCoordinator.swift in Sources */,
 				21421ED221CE70AA004D33EB /* DialogsPresenter.swift in Sources */,
 				21421EDF21CE7483004D33EB /* DialogsPresenterProtocols.swift in Sources */,
@@ -428,6 +551,7 @@
 		};
 		21421EB821CE6AC0004D33EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EB8929597CE73AB3FF01A5E /* Pods-MessengerViper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -446,6 +570,7 @@
 		};
 		21421EB921CE6AC0004D33EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D2F92E7FE0291C5304ADDBF /* Pods-MessengerViper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -14,5 +14,5 @@ protocol  DialogsInteractorInput: class {
 }
 
 protocol DialogsListInteractorOutput: class {
-    func recieved(dialogs: [Dialog])
+    func recieved(dialogs: [Chat])
 }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// сборка модуля
 class DialogsAssembly {
     func build() -> (controller: UIViewController, presenter: DialogsPresenterInput)? {
         let storyboard = UIStoryboard(name: "DialogsStoryboard", bundle: nil)

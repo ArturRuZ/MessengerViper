@@ -23,6 +23,8 @@ extension DialogsInteractor: DialogsInteractorInput {
     }
     
     func getDialogs() {
-        
+        let createdDialogs = ChatFactory().fakeChats(number: 30)
+        interactorOutput?.recieved(dialogs: createdDialogs )
+       
     }
 }

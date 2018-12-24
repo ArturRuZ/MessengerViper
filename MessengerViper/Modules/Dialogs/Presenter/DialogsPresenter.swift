@@ -12,9 +12,12 @@ class DialogsPresenter {
     private var presenterOutput: DialogsPresenterOutput!
     private weak var view: DialogsViewInput!
     private var interactor: DialogsInteractorInput!
+    
 }
 
 extension DialogsPresenter: DialogsPresenterInput {
+  
+    
     var output: DialogsPresenterOutput {
         get {
             return presenterOutput
@@ -44,7 +47,16 @@ extension DialogsPresenter: DialogsPresenterInput {
 }
 
 extension DialogsPresenter: DialogsListInteractorOutput {
-    func recieved(dialogs: [Dialog]) {
-        
+    func recieved(dialogs: [Chat]) {
+     
+       view?.chatsPreview(dialogs: dialogs)
+     
     }
 }
+
+extension DialogsPresenterInput {
+func firstRun() {
+    interactorInput.getDialogs()
+    }
+}
+
