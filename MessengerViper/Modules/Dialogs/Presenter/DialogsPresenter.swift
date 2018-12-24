@@ -12,7 +12,6 @@ class DialogsPresenter {
     private var presenterOutput: DialogsPresenterOutput!
     private weak var view: DialogsViewInput!
     private var interactor: DialogsInteractorInput!
-    
 }
 
 extension DialogsPresenter: DialogsPresenterInput {
@@ -24,6 +23,7 @@ extension DialogsPresenter: DialogsPresenterInput {
         }
         set {
             presenterOutput = newValue
+            print (presenterOutput)
         }
     }
     

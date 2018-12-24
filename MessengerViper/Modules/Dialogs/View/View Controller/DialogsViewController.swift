@@ -54,7 +54,6 @@ extension DialogsViewController {
 
 extension DialogsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print (chats.count)
         return chats.count
     }
     
