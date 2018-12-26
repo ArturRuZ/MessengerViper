@@ -44,6 +44,9 @@ extension DialogsPresenter: DialogsPresenterInput {
             interactor = newValue
         }
     }
+    func firstRun() {
+        interactorInput.getDialogs()
+    }
 }
 
 extension DialogsPresenter: DialogsListInteractorOutput {
@@ -54,9 +57,5 @@ extension DialogsPresenter: DialogsListInteractorOutput {
     }
 }
 
-extension DialogsPresenterInput {
-func firstRun() {
-    interactorInput.getDialogs()
-    }
-}
+
 

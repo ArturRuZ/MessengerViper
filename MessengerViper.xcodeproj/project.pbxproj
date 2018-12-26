@@ -37,6 +37,7 @@
 		34B389F321D166DA00AEE80B /* SingleChatViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B389F221D166DA00AEE80B /* SingleChatViewControllerProtocol.swift */; };
 		34B389F521D166EC00AEE80B /* SingleChatInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B389F421D166EC00AEE80B /* SingleChatInteractorProtocol.swift */; };
 		34B389F821D1671800AEE80B /* SingleChatPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B389F721D1671800AEE80B /* SingleChatPresenterProtocol.swift */; };
+		34B389FA21D360AB00AEE80B /* SingleChatStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34B389F921D360AB00AEE80B /* SingleChatStoryboard.storyboard */; };
 		8652DE99294BCB664AEDBC16 /* Pods_MessengerViper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8550DE98770A0B408B92B8B /* Pods_MessengerViper.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		34B389F221D166DA00AEE80B /* SingleChatViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChatViewControllerProtocol.swift; sourceTree = "<group>"; };
 		34B389F421D166EC00AEE80B /* SingleChatInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChatInteractorProtocol.swift; sourceTree = "<group>"; };
 		34B389F721D1671800AEE80B /* SingleChatPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChatPresenterProtocol.swift; sourceTree = "<group>"; };
+		34B389F921D360AB00AEE80B /* SingleChatStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SingleChatStoryboard.storyboard; sourceTree = "<group>"; };
 		5EB8929597CE73AB3FF01A5E /* Pods-MessengerViper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessengerViper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MessengerViper/Pods-MessengerViper.debug.xcconfig"; sourceTree = "<group>"; };
 		8D2F92E7FE0291C5304ADDBF /* Pods-MessengerViper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessengerViper.release.xcconfig"; path = "Pods/Target Support Files/Pods-MessengerViper/Pods-MessengerViper.release.xcconfig"; sourceTree = "<group>"; };
 		D8550DE98770A0B408B92B8B /* Pods_MessengerViper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessengerViper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -327,6 +329,7 @@
 			children = (
 				34B389EE21D1669D00AEE80B /* SingleChatViewController.swift */,
 				34B389F221D166DA00AEE80B /* SingleChatViewControllerProtocol.swift */,
+				34B389F921D360AB00AEE80B /* SingleChatStoryboard.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34B389FA21D360AB00AEE80B /* SingleChatStoryboard.storyboard in Resources */,
 				21421EB321CE6AC0004D33EB /* LaunchScreen.storyboard in Resources */,
 				34B389E121D1023B00AEE80B /* ChatTableViewCell.xib in Resources */,
 				21421ED721CE70E0004D33EB /* DialogsStoryboard.storyboard in Resources */,

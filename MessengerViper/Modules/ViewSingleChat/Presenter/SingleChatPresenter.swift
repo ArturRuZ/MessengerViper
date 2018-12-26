@@ -16,3 +16,45 @@ class SingleChatPresenter {
     // интерактор для презентера
     private var interactor: SingleChatInteractorInput!
 }
+
+
+extension SingleChatPresenter: SingleChatPresenterInput {
+    var output: SingleChatPresenterOutput {
+        get {
+            return presenterOutput
+        }
+        set {
+            presenterOutput = newValue
+        }
+    }
+    
+    var viewInput: SingleChatViewInput {
+        get {
+            return view
+        }
+        set {
+            view = newValue
+        }
+    }
+    
+    var interactorInput: SingleChatInteractorInput {
+        get {
+            return interactor
+        }
+        set {
+            interactor = newValue
+        }
+    }
+    
+   func messageInput() {
+        
+    }
+}
+
+extension SingleChatPresenter : SingleChatMessagesInteractorOutput {
+    func chatWithNewMessages(dialog: [Chat]) {
+       
+    }
+    
+    
+}
