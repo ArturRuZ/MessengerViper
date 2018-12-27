@@ -56,10 +56,10 @@ extension SingleChatPresenter : SingleChatMessagesInteractorOutput {
     
 }
 extension SingleChatPresenter {
-    func messageInput() {
-        
+    func newMessageInput(newMessages: Chat) {
+        presenterOutput.chatWithNewMessages(dialog: newMessages)
     }
-    func messagePresent(presentedMessages : Chat ) {
+    func messagePresentFromDialogsVC(presentedMessages : Chat ) {
         interactor?.messageInput(presentedMessages: presentedMessages)
     }
     

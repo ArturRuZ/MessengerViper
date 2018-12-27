@@ -13,11 +13,11 @@ protocol SingleChatPresenterInput: class {
     var output: SingleChatPresenterOutput { get set }
     var viewInput: SingleChatViewInput { get set }
     var interactorInput: SingleChatInteractorInput { get set }
-    func messageInput()
-    func messagePresent(presentedMessages : Chat )
+    func newMessageInput(newMessages: Chat)
+    func messagePresentFromDialogsVC(presentedMessages : Chat )
     func loadMessages()
 }
 
 protocol SingleChatPresenterOutput: class {
-    func chatWithNewMessages(dialog: [Chat])
+    func chatWithNewMessages(dialog: Chat)
 }

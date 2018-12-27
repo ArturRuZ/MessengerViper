@@ -16,7 +16,7 @@ import InitialsImageView
 
 
 class SingleChatViewController : MessagesViewController {
-   
+    
     
     private var presenter : SingleChatPresenterInput!
     
@@ -25,83 +25,44 @@ class SingleChatViewController : MessagesViewController {
     var avatarButton : AvatarView!
     var sendDataSource : Chat!
     let me : User = User(id:0, name: "my_name")
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
         messageInputBar.delegate = self
-        // подгружаем данные с другого контроллера
-       
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         presenter?.loadMessages()
-        //sendDataSource = buffer.getBuffer()
-        
-     //   navigationItem.title = sendDataSource.userName
-        // navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: nil)
-        
-        //let createdDialogs = ChatFactory().fakeChats(number: 30)
-        //sendDataSource = createdDialogs[2]
-      
+        messagesCollectionView.reloadData()
     }
     
-    
-    
-    
-    
-    //обработка действий при нажатии на кнопку назад
-    override func viewWillDisappear(_ animated: Bool) {
-        //метод prepare не работает поскольку в данном классе он вероятно не реализован
-        super.viewWillDisappear(true)
-        if isMovingFromParent {
-            print ("isMoving")
-        
-        }
+    @IBAction func goBack(_ sender: Any) {
+        presenter?.newMessageInput(newMessages: sendDataSource)
     }
+    
 }
 
-extension SingleChatViewController : SingleChatViewInput {
-    var presenterInput: SingleChatPresenterInput {
-        get {
-            return presenter
-        }
-        set {
-            presenter = newValue
-        }
-    }
-    
-    func messagesPreview(dialog: Chat) {
-        sendDataSource = dialog
-        navigationItem.title = sendDataSource.userName
-        print (sendDataSource.messages.count)
-    
-    
-    
-    }
-    
-    
-}
 
 extension SingleChatViewController : MessagesDataSource {
-    
     
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
         return sendDataSource.messages.count
     }
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
-        // вычитываем пользователя
         sendDataUser = sendDataSource.messages[indexPath.section].user
         return sendDataSource.messages[indexPath.section]
     }
     
     func currentSender() -> Sender {
-        // инициализируем пользователя
         return Sender(id: me.name , displayName: me.name)
     }
 }
+
 
 extension SingleChatViewController: MessagesDisplayDelegate, MessagesLayoutDelegate {
     func messageTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
@@ -115,7 +76,7 @@ extension SingleChatViewController: MessagesDisplayDelegate, MessagesLayoutDeleg
             dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
             let dateFormatterPrint = DateFormatter()
             dateFormatterPrint.dateFormat = "HH:mm:ss"
-            if let date = dateFormatterGet.date(from: message.sentDate.description ?? ""){convertDate = dateFormatterPrint.string(from: date)
+            if let date = dateFormatterGet.date(from: message.sentDate.description){convertDate = dateFormatterPrint.string(from: date)
                 return convertDate!
             } else { return ""}
         }
@@ -143,8 +104,6 @@ extension SingleChatViewController : MessageInputBarDelegate {
         let faker = Faker()
         let user = me
         
-        
-        print(currentSender())
         let inputMessage = UserMessage(messageId: "\(faker.number.randomInt())", user: user , text: text, date: Date())
         sendDataSource.messages.append(inputMessage)
         // обнуляем текстовое поле после вводы сообщения
@@ -157,3 +116,18 @@ extension SingleChatViewController : MessageInputBarDelegate {
     }
 }
 
+extension SingleChatViewController : SingleChatViewInput {
+    var presenterInput: SingleChatPresenterInput {
+        get {
+            return presenter
+        }
+        set {
+            presenter = newValue
+        }
+    }
+    
+    func messagesPreview(dialog: Chat) {
+        sendDataSource = dialog
+        navigationItem.title = sendDataSource.userName
+    }
+}

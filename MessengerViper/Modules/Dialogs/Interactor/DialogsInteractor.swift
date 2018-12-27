@@ -10,9 +10,19 @@ import Foundation
 
 class DialogsInteractor {
     private var interactorOutput: DialogsListInteractorOutput!
+    private var chatWithAllMessages: [Chat]!
 }
 
 extension DialogsInteractor: DialogsInteractorInput {
+    var chatWithMessages: [Chat] {
+        get {
+            return chatWithAllMessages
+        }
+        set {
+            chatWithAllMessages = newValue
+        }
+    }
+    
     var output: DialogsListInteractorOutput {
         get {
             return interactorOutput
@@ -23,8 +33,16 @@ extension DialogsInteractor: DialogsInteractorInput {
     }
     
     func getDialogs() {
-        let createdDialogs = ChatFactory().fakeChats(number: 30)
-        interactorOutput?.recieved(dialogs: createdDialogs )
        
+        if chatWithAllMessages == nil {chatWithMessages = ChatFactory().fakeChats(number: 30)}
+        interactorOutput?.recieved(dialogs: chatWithAllMessages )
+    }
+    
+    func dialogsInput(newMessages: Chat) {
+        for i in 0..<chatWithAllMessages.count {
+            if (chatWithAllMessages[i].id == newMessages.id){
+                chatWithMessages[i].messages = newMessages.messages}
+        }
+        interactorOutput?.recieved(dialogs: chatWithAllMessages)
     }
 }

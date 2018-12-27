@@ -35,7 +35,7 @@ extension SingleChatInteractor : SingleChatInteractorInput{
     }
     
     func messageInput(presentedMessages: Chat) {
-       self.presentedMessages =  presentedMessages
+       presentedMsg =  presentedMessages
     }
     
     func loadMessages() {

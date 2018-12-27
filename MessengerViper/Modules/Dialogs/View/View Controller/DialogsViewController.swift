@@ -21,18 +21,13 @@ class DialogsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.firstRun()
-    }
-    deinit {
-       
-    print ("Deinit")
+        presenter.loadMessages()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        print ("viewWillDisappear")
+    override func viewWillAppear(_ animated: Bool) {
+        presenter.loadMessages()
     }
 }
-
 
 
 extension DialogsViewController {
@@ -68,12 +63,6 @@ extension DialogsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         presenter?.selected(dialog: chats[indexPath.row])
-       
-        
-        // передаем объект чат на следующий контроллер
-        //buffer.sendbuffer(chat)
-        // let destination = UserChatViewController ()
-        // navigationController?.pushViewController(destination, animated: true)
     }
 }
 
@@ -87,8 +76,15 @@ extension DialogsViewController: DialogsViewInput {
             presenter = newValue
         }
     }
+    
     func chatsPreview(dialogs: [Chat]) {
-        chats = dialogs
-        setUpUI()
+        if chats == nil {
+            chats = dialogs
+            setUpUI() }
+        else {
+            chats = dialogs
+            tableView.reloadData()
+        }
+        
     }
 }

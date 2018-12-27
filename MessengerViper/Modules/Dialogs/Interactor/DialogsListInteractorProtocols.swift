@@ -10,7 +10,9 @@ import Foundation
 
 protocol  DialogsInteractorInput: class {
     var output: DialogsListInteractorOutput { get set }
+    var chatWithMessages : [Chat] {get set}
     func getDialogs()
+    func dialogsInput(newMessages: Chat)
 }
 
 protocol DialogsListInteractorOutput: class {

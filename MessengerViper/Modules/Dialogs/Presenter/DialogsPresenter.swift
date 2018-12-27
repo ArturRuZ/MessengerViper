@@ -55,12 +55,14 @@ extension DialogsPresenter: DialogsListInteractorOutput {
 }
 
 extension DialogsPresenter {
-    func firstRun() {
+    func loadMessages() {
         interactorInput.getDialogs()
     }
     func selected(dialog: Chat){
      presenterOutput?.selected(dialog: dialog)
     }
-    
+    func updateMessages(newMessages: Chat) {
+        interactor?.dialogsInput(newMessages: newMessages)
+    }
 }
 

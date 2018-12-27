@@ -27,18 +27,7 @@ class ModulesCoordinator {
     }
 }
 
-extension ModulesCoordinator: DialogsPresenterOutput {
-    func selected(dialog: Chat) {
-        singleChatPresenter?.messagePresent(presentedMessages: dialog)
-        presentSingleChatView()
-        print ("!!")
-        print (dialogsView)
-        print (singleChatView)
-    }
-}
-
 extension ModulesCoordinator {
-    
     func singleChatModuleController() -> UIViewController{
         let singleChatAssembly = SingleChatAssembly()
         guard let singleChat = singleChatAssembly.build() else { return UIViewController() }
@@ -49,45 +38,47 @@ extension ModulesCoordinator {
     }
 }
 
+
+extension ModulesCoordinator: DialogsPresenterOutput {
+    func selected(dialog: Chat) {
+        singleChatPresenter?.messagePresentFromDialogsVC(presentedMessages: dialog)
+        dismissDialogsView()
+        presentSingleChatView()
+        print (dialog)
+  
+    }
+}
+
+
 extension ModulesCoordinator: SingleChatPresenterOutput {
-    func chatWithNewMessages(dialog: [Chat]) {
-        
+    func chatWithNewMessages(dialog: Chat) {
+        dismissSingleChatView()
+        presentDialogsView()
+        dialogsPresenter?.updateMessages(newMessages: dialog)
     }
 }
 
 extension ModulesCoordinator: RoutingDialogsView {
     func presentDialogsView() {
-        let storyboard = UIStoryboard(name: "DialogsStoryboard", bundle: nil)
-        let rootVC = storyboard.instantiateViewController(withIdentifier: "kDialogsNavigationControllerIdentifier")
-        guard let navigationVC = rootVC as? UINavigationController,
-            let dialogsVC = navigationVC.viewControllers.first as? DialogsViewController else {return}
-        navigationVC.present(dialogsVC, animated: true, completion: nil)
-        print (dialogsView)
+        guard let singleChatVC = singleChatView else {return}
+        singleChatVC.present( dialogsView!, animated: true, completion: nil)
     }
     
     func dismissDialogsView() {
-       let dialogsVC = dialogsView?.viewControllers.first
-       dialogsVC?.dismiss(animated: true, completion: nil)
+        guard let dialogsVC = dialogsView else {return}
+        dialogsVC.dismiss(animated: true, completion: nil)
     }
 }
 
 extension ModulesCoordinator : RoutingSingleChatView {
     func presentSingleChatView() {
-        //guard let singleChatVC = singleChatView?.viewControllers.first as? SingleChatViewController else {return}
-        
-        print (singleChatView!)
-        
-    dialogsView!.present(singleChatView!, animated: true, completion: nil)
-     
-        
-        // dialogsView!.pushViewController(singleChatView!, animated: true)
-       // window.rootViewController = singleChatView
-       // window.makeKeyAndVisible()
+        guard let dialogsVC = dialogsView else {return}
+        dialogsVC.present(singleChatView!, animated: true, completion: nil)
     }
     
     func dismissSingleChatView() {
-        
+        guard let singleChatVC = singleChatView else {return}
+        singleChatVC.dismiss(animated: true, completion: nil)
     }
-    
-    
+
 }

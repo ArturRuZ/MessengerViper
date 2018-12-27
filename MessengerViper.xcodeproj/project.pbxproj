@@ -152,9 +152,9 @@
 		21421EBC21CE6C69004D33EB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				34B389E221D162C800AEE80B /* ViewSingleChat */,
 				21421EC321CE6E54004D33EB /* Modules Coordinator */,
 				21421EC221CE6E2F004D33EB /* Dialogs */,
+				34B389E221D162C800AEE80B /* ViewSingleChat */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -283,7 +283,6 @@
 			isa = PBXGroup;
 			children = (
 				34B389E321D162EF00AEE80B /* Asembly */,
-				34B389E421D1631C00AEE80B /* Entity */,
 				34B389E521D1634200AEE80B /* Presenter */,
 				34B389E621D1634B00AEE80B /* Interactor */,
 				34B389E721D1635600AEE80B /* View */,
@@ -297,13 +296,6 @@
 				34B389F021D166B600AEE80B /* SingleChatAsembly.swift */,
 			);
 			path = Asembly;
-			sourceTree = "<group>";
-		};
-		34B389E421D1631C00AEE80B /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		34B389E521D1634200AEE80B /* Presenter */ = {

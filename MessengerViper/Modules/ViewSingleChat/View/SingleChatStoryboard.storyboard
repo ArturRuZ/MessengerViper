@@ -36,7 +36,11 @@
                         <viewLayoutGuide key="safeArea" id="hyq-W2-kGX"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="U4S-nT-UgI">
-                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="reply" id="XQN-Ly-GtN"/>
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="reply" id="XQN-Ly-GtN">
+                            <connections>
+                                <action selector="goBack:" destination="S3w-nU-8gF" id="nhf-fD-bTp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M89-Zr-8EA" userLabel="First Responder" sceneMemberID="firstResponder"/>
