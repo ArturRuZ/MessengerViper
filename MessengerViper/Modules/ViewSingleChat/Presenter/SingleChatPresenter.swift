@@ -15,10 +15,12 @@ class SingleChatPresenter {
     private weak var view: SingleChatViewInput!
     // интерактор для презентера
     private var interactor: SingleChatInteractorInput!
+    
 }
 
 
 extension SingleChatPresenter: SingleChatPresenterInput {
+   
     var output: SingleChatPresenterOutput {
         get {
             return presenterOutput
@@ -45,16 +47,23 @@ extension SingleChatPresenter: SingleChatPresenterInput {
             interactor = newValue
         }
     }
-    
-   func messageInput() {
-        
-    }
 }
 
 extension SingleChatPresenter : SingleChatMessagesInteractorOutput {
-    func chatWithNewMessages(dialog: [Chat]) {
-       
+    func chatWithNewMessages(dialog: Chat) {
+       view?.messagesPreview(dialog: dialog)
     }
     
+}
+extension SingleChatPresenter {
+    func messageInput() {
+        
+    }
+    func messagePresent(presentedMessages : Chat ) {
+        interactor?.messageInput(presentedMessages: presentedMessages)
+    }
     
+    func loadMessages() {
+        interactor?.loadMessages()
+    }
 }

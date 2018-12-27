@@ -8,38 +8,33 @@
 
 import UIKit
 
+
 class DialogsViewController: UIViewController {
-    private var presenter: DialogsPresenterInput!
     
     @IBOutlet weak var tableView: UITableView!
-  
+    
+    private var presenter: DialogsPresenterInput!
     private let kChatTableViewCellNib = UINib(nibName: "ChatTableViewCell", bundle: nil)
     private let kChatTableViewCellReuseIdentifier = "kChatTableViewCellReuseIdentifier"
-    
     private var chats : [Chat]!
-  
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.firstRun()
-        
+    }
+    deinit {
+       
+    print ("Deinit")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print ("viewWillDisappear")
     }
 }
 
-extension DialogsViewController: DialogsViewInput {
-    
-    var presenterInput: DialogsPresenterInput {
-        get {
-            return presenter
-        }
-        set {
-            presenter = newValue
-        }
-    }
-    func chatsPreview(dialogs: [Chat]) {
-        chats = dialogs
-        setUpUI()
-    }
-}
+
+
 extension DialogsViewController {
     private func setUpUI() {
         tableView.register(kChatTableViewCellNib, forCellReuseIdentifier: kChatTableViewCellReuseIdentifier)
@@ -62,8 +57,7 @@ extension DialogsViewController: UITableViewDataSource {
                                                        for: indexPath) as? ChatTableViewCell else {
                                                         return UITableViewCell()
         }
-        
-       cell.viewModel = chats[indexPath.row]
+        cell.viewModel = chats[indexPath.row]
         return cell
     }
 }
@@ -73,14 +67,28 @@ extension DialogsViewController: UITableViewDataSource {
 extension DialogsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        //let chat = dataSource[indexPath.row]
-      //  print("выбранный чат - \(chat.prettyDescription)")
-        
-
+        presenter?.selected(dialog: chats[indexPath.row])
+       
         
         // передаем объект чат на следующий контроллер
         //buffer.sendbuffer(chat)
-       // let destination = UserChatViewController ()
-       // navigationController?.pushViewController(destination, animated: true)
+        // let destination = UserChatViewController ()
+        // navigationController?.pushViewController(destination, animated: true)
+    }
+}
+
+
+extension DialogsViewController: DialogsViewInput {
+    var presenterInput: DialogsPresenterInput {
+        get {
+            return presenter
+        }
+        set {
+            presenter = newValue
+        }
+    }
+    func chatsPreview(dialogs: [Chat]) {
+        chats = dialogs
+        setUpUI()
     }
 }

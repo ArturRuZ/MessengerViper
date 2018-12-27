@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-726" y="167"/>
         </scene>
-        <!--Single Chat View Controller-->
+        <!--Title-->
         <scene sceneID="1mk-r9-GLe">
             <objects>
                 <viewController id="S3w-nU-8gF" customClass="SingleChatViewController" customModule="MessengerViper" customModuleProvider="target" sceneMemberID="viewController">
@@ -35,7 +35,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="hyq-W2-kGX"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gBi-kI-aPR"/>
+                    <navigationItem key="navigationItem" title="Title" id="U4S-nT-UgI">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="reply" id="XQN-Ly-GtN"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M89-Zr-8EA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

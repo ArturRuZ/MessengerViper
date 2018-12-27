@@ -13,7 +13,7 @@ import UIKit
 
 // сборка модуля
 class SingleChatAssembly {
-    func build() -> (controller: UIViewController, presenter: SingleChatPresenterInput)? {
+    func build() -> (controller: UINavigationController, presenter: SingleChatPresenterInput)? {
         let storyboard = UIStoryboard(name: "SingleChatStoryboard", bundle: nil)
         let rootVC = storyboard.instantiateViewController(withIdentifier: "kSingleChatNavigationControllerIdentifier")
         guard let navigationVC = rootVC as? UINavigationController,
@@ -26,7 +26,7 @@ class SingleChatAssembly {
         presenter.interactorInput = interactor
         presenter.viewInput = SingleChatVC
         interactor.output = presenter
-        
+        print ("контроллер создан")
         return (controller: navigationVC, presenter: presenter)
     }
 }

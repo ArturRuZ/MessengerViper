@@ -11,5 +11,10 @@ import Foundation
 
 protocol SingleChatViewInput: class {
     var presenterInput: SingleChatPresenterInput { get set }
-    func messagesPreview(dialogs: [UserMessage])
+    func messagesPreview(dialog: Chat)
+}
+
+protocol RoutingSingleChatView: class {
+    func presentSingleChatView()
+    func dismissSingleChatView()
 }

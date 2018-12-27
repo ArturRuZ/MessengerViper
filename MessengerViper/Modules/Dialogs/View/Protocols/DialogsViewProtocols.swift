@@ -13,4 +13,7 @@ protocol DialogsViewInput: class {
     func chatsPreview(dialogs: [Chat]) 
 }
 
-
+protocol RoutingDialogsView: class {
+    func presentDialogsView()
+    func dismissDialogsView()
+}

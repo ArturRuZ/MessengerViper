@@ -11,12 +11,22 @@ import Foundation
 
 class SingleChatInteractor {
     private var interactorOutput: SingleChatMessagesInteractorOutput!
+    private var presentedMessages : Chat!
 }
 
 extension SingleChatInteractor : SingleChatInteractorInput{
+ 
+    var presentedMsg: Chat {
+        get {
+            return presentedMessages
+        }
+        set {
+            presentedMessages = newValue
+        }
+    }
+    
     var output: SingleChatMessagesInteractorOutput {
         get {
-            // cвязать с презентером 
             return interactorOutput
         }
         set {
@@ -24,8 +34,18 @@ extension SingleChatInteractor : SingleChatInteractorInput{
         }
     }
     
+    func messageInput(presentedMessages: Chat) {
+       self.presentedMessages =  presentedMessages
+    }
+    
+    func loadMessages() {
+    interactorOutput.chatWithNewMessages(dialog: presentedMessages)
+    }
+    
+    
+    
     func messageInput() {
-        
+  
     }
     
     

@@ -25,7 +25,7 @@ class SingleChatViewController : MessagesViewController {
     var avatarButton : AvatarView!
     var sendDataSource : Chat!
     let me : User = User(id:0, name: "my_name")
-//let buffer = Buffer.buffer
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +35,16 @@ class SingleChatViewController : MessagesViewController {
         messagesCollectionView.messagesDisplayDelegate = self
         messageInputBar.delegate = self
         // подгружаем данные с другого контроллера
-        sendDataSource = buffer.getBuffer()
+       
+        presenter?.loadMessages()
+        //sendDataSource = buffer.getBuffer()
         
-        navigationItem.title = sendDataSource.userName
+     //   navigationItem.title = sendDataSource.userName
         // navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: nil)
         
-        
-        print (sendDataSource.messages.count)
+        //let createdDialogs = ChatFactory().fakeChats(number: 30)
+        //sendDataSource = createdDialogs[2]
+      
     }
     
     
@@ -54,8 +57,7 @@ class SingleChatViewController : MessagesViewController {
         super.viewWillDisappear(true)
         if isMovingFromParent {
             print ("isMoving")
-            
-            buffer.sendbuffer(sendDataSource)
+        
         }
     }
 }
@@ -70,8 +72,13 @@ extension SingleChatViewController : SingleChatViewInput {
         }
     }
     
-    func messagesPreview(dialogs: [UserMessage]) {
-        
+    func messagesPreview(dialog: Chat) {
+        sendDataSource = dialog
+        navigationItem.title = sendDataSource.userName
+        print (sendDataSource.messages.count)
+    
+    
+    
     }
     
     

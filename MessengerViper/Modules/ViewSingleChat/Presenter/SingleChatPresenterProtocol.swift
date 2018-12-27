@@ -14,6 +14,8 @@ protocol SingleChatPresenterInput: class {
     var viewInput: SingleChatViewInput { get set }
     var interactorInput: SingleChatInteractorInput { get set }
     func messageInput()
+    func messagePresent(presentedMessages : Chat )
+    func loadMessages()
 }
 
 protocol SingleChatPresenterOutput: class {

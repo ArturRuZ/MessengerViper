@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow()
         app = Application()
+        app?.SingleChat()
         window?.rootViewController = app?.fire()
         window?.makeKeyAndVisible()
         return true

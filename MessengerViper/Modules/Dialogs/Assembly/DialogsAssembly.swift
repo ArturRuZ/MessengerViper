@@ -9,7 +9,7 @@
 import UIKit
 // сборка модуля
 class DialogsAssembly {
-    func build() -> (controller: UIViewController, presenter: DialogsPresenterInput)? {
+    func build() -> (controller: UINavigationController, presenter: DialogsPresenterInput)? {
         let storyboard = UIStoryboard(name: "DialogsStoryboard", bundle: nil)
         let rootVC = storyboard.instantiateViewController(withIdentifier: "kDialogsNavigationControllerIdentifier")
         guard let navigationVC = rootVC as? UINavigationController,

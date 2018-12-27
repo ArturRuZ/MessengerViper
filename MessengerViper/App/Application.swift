@@ -25,3 +25,8 @@ extension Application {
         return modulesCoordinator.rootModuleController()
     }
 }
+extension Application {
+    func SingleChat() -> UIViewController {
+        return modulesCoordinator.singleChatModuleController()
+    }
+}

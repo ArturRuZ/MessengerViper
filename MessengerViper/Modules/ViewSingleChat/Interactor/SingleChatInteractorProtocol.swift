@@ -9,9 +9,12 @@
 import Foundation
 
 protocol  SingleChatInteractorInput: class {
+    var presentedMsg : Chat {get set}
     var output: SingleChatMessagesInteractorOutput { get set }
-    func messageInput()
+    func messageInput(presentedMessages: Chat)
+     func loadMessages()
 }
 protocol  SingleChatMessagesInteractorOutput: class {
-    func chatWithNewMessages(dialog: [Chat])
+    func chatWithNewMessages(dialog: Chat)
+   
 }
